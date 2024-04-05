@@ -6,7 +6,18 @@ import './App.css';
 export const App = () => {
     const [counter, setCounter] = useState(0);
 
-    console.log('App', { counter });
+    console.log({
+        counter,
+        APP_TITLE,
+        VITE_APP_TITLE: import.meta.env.VITE_APP_TITLE,
+        DEVELOP_TITLE: DEVELOP_TITLE,
+        VITE_DEVELOP_TITLE: import.meta.env.VITE_DEVELOP_TITLE,
+        PRODUCT_TITLE: PRODUCT_TITLE || '',
+        VITE_PRODUCT_TITLE: import.meta.env.VITE_PRODUCT_TITLE,
+        dev: import.meta.env.DEV,
+        url: import.meta.env.BASE_URL,
+        mode: import.meta.env.MODE,
+    });
 
     return (
         <>
