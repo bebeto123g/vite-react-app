@@ -3,8 +3,9 @@
 // eslint-disable-next-line @typescript-eslint/naming-convention
 interface ImportMetaEnv {
     readonly VITE_APP_TITLE: string;
-    readonly VITE_DEVELOP_TITLE?: string;
-    readonly VITE_PRODUCT_TITLE?: string;
+    readonly VITE_DEVELOP_TITLE: string | undefined;
+    readonly VITE_PRODUCT_TITLE: string | undefined;
+    readonly VITE_TEST_TITLE: string | undefined;
     // more env variables...
 }
 
@@ -14,5 +15,6 @@ interface ImportMeta {
 }
 
 declare const APP_TITLE: string;
-declare const DEVELOP_TITLE: string;
-declare const PRODUCT_TITLE: string;
+declare const DEVELOP_TITLE: string | undefined;
+declare const PRODUCT_TITLE: string | undefined;
+declare const TEST_TITLE: string | undefined;
