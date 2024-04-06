@@ -27,7 +27,8 @@
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": false,
         "forceConsistentCasingInFileNames": true,
-        "skipLibCheck": false
+        "skipLibCheck": false,
+        "baseUrl": "src"
     },
     "include": ["src", "src/setupTests.ts", ".eslintrc.cjs", "vite.config.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
