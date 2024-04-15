@@ -58,6 +58,7 @@ export interface IRequestProperty<TResponse, TErrorResult = unknown> {
     serviceErrorNotification?: TErrorNotification<TErrorResult>;
     serviceMockDelay?: boolean | IServiceMockDelay;
     mockCallbackServiceSimulator?: TMockCallbackServiceSimulator<TResponse>;
+    data?: unknown;
 }
 
 export interface IRequestPropertyWithData<TResponse, TData = unknown, TErrorResult = unknown>
