@@ -4,17 +4,13 @@ import { axiosRequestFabric, transformRequestPropertyForRestActive } from './axi
 
 const { POST, GET, DELETE, PUT, PATCH } = axiosRequestFabric<IErrorsResult>();
 
-// TODO внести изменения в Eslint по наименоанию
-
 export class AxiosService {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     static POST<TResponse, TData = unknown>(
         requestProperty: IRequestPropertyWithData<TResponse, TData, IErrorsResult>
     ) {
         return () => POST(transformRequestPropertyForRestActive<TResponse, TData>(requestProperty));
     }
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     static GET<TResponse>(requestProperty: IRequestProperty<TResponse, IErrorsResult>) {
         return () =>
             GET(
@@ -26,7 +22,6 @@ export class AxiosService {
             );
     }
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     static DELETE<TResponse, TData = unknown>(
         requestProperty:
             | IRequestProperty<TResponse, IErrorsResult>
@@ -43,14 +38,12 @@ export class AxiosService {
             );
     }
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     static PATCH<TResponse, TData = unknown>(
         requestProperty: IRequestPropertyWithData<TResponse, TData, IErrorsResult>
     ) {
         return () => PATCH(transformRequestPropertyForRestActive<TResponse, TData>(requestProperty));
     }
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     static PUT<TResponse, TData = unknown>(
         requestProperty: IRequestPropertyWithData<TResponse, TData, IErrorsResult>
     ) {

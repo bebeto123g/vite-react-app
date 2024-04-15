@@ -225,7 +225,7 @@ module.exports = defineConfig({
                     },
                     {
                         selector: 'classMethod',
-                        format: ['camelCase'],
+                        format: ['camelCase', 'UPPER_CASE'],
                         leadingUnderscore: 'allow',
                     },
                     // Функции через camelCase, исключение функциональные компоненты
