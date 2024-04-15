@@ -4,8 +4,8 @@ import {
     ERestMethod,
     IRequestProperty,
     IRequestPropertyWithData,
+    axiosRequest,
 } from 'Core/Services/AxiosService';
-import { axiosRequestFabric } from './axiosUtils';
 
 /** REGEX для парсинга имени файла из заголовка */
 const FILENAME_REGEX = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
@@ -26,7 +26,7 @@ export const downloadFile = async <TData = unknown>(
     property: IRequestProperty<BlobPart> | IRequestPropertyWithData<BlobPart, TData>,
     trustedContentTypes: EMimeTypes[] = DEFAULT_DOWNLOAD_FILE_TRUSTED_CONTENT_TYPES
 ): Promise<void> => {
-    const { headers, data } = await axiosRequestFabric<BlobPart>(ERestMethod.POST, {
+    const { headers, data } = await axiosRequest<BlobPart>(ERestMethod.POST, {
         ...property,
         config: {
             responseType: 'blob',

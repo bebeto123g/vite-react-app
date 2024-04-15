@@ -7,7 +7,6 @@ export const App = () => {
     const [counter, setCounter] = useState(0);
 
     console.log({
-        counter,
         APP_TITLE,
         VITE_APP_TITLE: import.meta.env.VITE_APP_TITLE,
         DEVELOP_TITLE,
@@ -16,7 +15,13 @@ export const App = () => {
         VITE_DEVELOP_TITLE: import.meta.env.VITE_DEVELOP_TITLE,
         PRODUCT_TITLE,
         VITE_PRODUCT_TITLE: import.meta.env.VITE_PRODUCT_TITLE,
+        PUBLIC_PATH,
+        VITE_PUBLIC_PATH: import.meta.env.VITE_PUBLIC_PATH,
+        REST_ACTIVE,
+        VITE_REST_ACTIVE: import.meta.env.VITE_REST_ACTIVE,
         dev: import.meta.env.DEV,
+        test: import.meta.env.TEST,
+        prod: import.meta.env.PROD,
         url: import.meta.env.BASE_URL,
         mode: import.meta.env.MODE,
     });

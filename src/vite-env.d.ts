@@ -6,6 +6,9 @@ interface ImportMetaEnv {
     readonly VITE_DEVELOP_TITLE: string | undefined;
     readonly VITE_PRODUCT_TITLE: string | undefined;
     readonly VITE_TEST_TITLE: string | undefined;
+
+    readonly VITE_PUBLIC_PATH: string | undefined;
+    readonly VITE_REST_ACTIVE: string | undefined;
     // more env variables...
 }
 
@@ -14,7 +17,20 @@ interface ImportMeta {
     readonly env: ImportMetaEnv;
 }
 
+/**
+ * Заголовки для тестовых сред
+ */
 declare const APP_TITLE: string;
 declare const DEVELOP_TITLE: string | undefined;
 declare const PRODUCT_TITLE: string | undefined;
 declare const TEST_TITLE: string | undefined;
+
+/**
+ * Корень запросов приложения
+ * */
+declare const PUBLIC_PATH: string;
+
+/**
+ * Используем rest-запросы или моки
+ * */
+declare const REST_ACTIVE: boolean;

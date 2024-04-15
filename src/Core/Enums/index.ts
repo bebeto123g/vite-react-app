@@ -1,1 +1,2 @@
-export * from './MimeTypes';
+export * from './MimeTypesEnums';
+export * from './ServiceEnums';

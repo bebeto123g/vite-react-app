@@ -4,11 +4,19 @@ import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
 import { configDefaults } from 'vitest/config';
 
+const replaceEnvValue = (value: string | undefined) => {
+    if (value === 'true' || value === 'false') {
+        return value === 'true';
+    }
+
+    return JSON.stringify(value);
+};
+
 const defineEnvConstants = (env: Record<string, string>) =>
     Object.entries(env).reduce(
         (acc, [key, value]) => ({
             ...acc,
-            [key.replace('VITE_', '')]: JSON.stringify(value),
+            [key.replace('VITE_', '')]: replaceEnvValue(value),
         }),
         {}
     );

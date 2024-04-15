@@ -1,2 +1,2 @@
-export * from './axiosUtils';
+export * from './axiosRequest';
 export * from './downloadFile';
