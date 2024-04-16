@@ -28,7 +28,7 @@
         "esModuleInterop": false,
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": false,
-        "baseUrl": "src"
+        "baseUrl": "./src"
     },
     "include": ["src", "src/setupTests.ts", ".eslintrc.cjs", "vite.config.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]

@@ -5,7 +5,7 @@ import {
     IRequestProperty,
     IRequestPropertyWithData,
     axiosRequest,
-} from 'Core/Services/AxiosService';
+} from 'Services/AxiosService';
 
 /** REGEX для парсинга имени файла из заголовка */
 const FILENAME_REGEX = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;

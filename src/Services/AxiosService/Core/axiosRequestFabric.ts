@@ -1,11 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { IErrorsResult, IServerErrorsResult } from 'Core/Models';
-import {
-    ERestMethod,
-    IRequestProperty,
-    IRequestPropertyWithData,
-    axiosRequest,
-} from 'Core/Services/AxiosService';
+import { ERestMethod, IRequestProperty, IRequestPropertyWithData, axiosRequest } from 'Services/AxiosService';
 
 /**
  * Выясняем есть ли необходимость вызывать моки

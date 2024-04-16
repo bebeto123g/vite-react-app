@@ -1,5 +1,5 @@
 import { IErrorsResult } from 'Core/Models';
-import { IRequestProperty, IRequestPropertyWithData } from 'Core/Services/AxiosService';
+import { IRequestProperty, IRequestPropertyWithData } from 'Services/AxiosService';
 import { axiosRequestFabric, transformRequestPropertyForRestActive } from './axiosRequestFabric';
 
 const { POST, GET, DELETE, PUT, PATCH } = axiosRequestFabric<IErrorsResult>();

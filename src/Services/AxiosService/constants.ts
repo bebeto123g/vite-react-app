@@ -1,5 +1,5 @@
 import { EMimeTypes } from 'Core/Enums';
-import { IServiceMockDelay } from 'Core/Services/AxiosService';
+import { IServiceMockDelay } from './interfaces';
 
 /**
  * Разрешенные contentTypes для загрузки файлов по умолчанию
