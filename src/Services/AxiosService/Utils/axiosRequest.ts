@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import { randomInteger } from 'Core/Utils';
 import {
     DEFAULT_SERVICE_MOCK_DELAY,
     ERestMethod,
@@ -6,8 +7,7 @@ import {
     IRequestPropertyWithData,
     IServiceMockDelay,
     TMockCallbackServiceSimulator,
-} from 'Core/Services/AxiosService';
-import { randomInteger } from 'Core/Utils';
+} from 'Services/AxiosService';
 
 /**
  * Функция для получения данных из моков с возможностью подмены данных

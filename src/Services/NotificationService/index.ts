@@ -1,4 +1,5 @@
 export { NotificationServiceProvider } from './NotificationServiceProvider';
+export { useNotification } from './NotificationServiceContext';
 
 // модуль уведомлений для всего приложения
 /**

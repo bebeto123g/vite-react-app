@@ -1,8 +1,8 @@
-import { createContext } from 'react';
-import { INotificationServiceState } from './interfaces';
+import { createContext, useContext } from 'react';
+import { INotificationState } from './interfaces';
 
-const defaultState: INotificationServiceState = {
-    isOpen: false,
-};
+export const NotificationServiceContext = createContext<
+    (notification: Omit<INotificationState, 'isOpen'>) => void
+>(() => {});
 
-export const NotificationServiceContext = createContext(defaultState);
+export const useNotification = () => useContext(NotificationServiceContext);

@@ -2,6 +2,7 @@
 /// <reference types="vite/client" />
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
+import viteTsconfigPaths from 'vite-tsconfig-paths';
 import { configDefaults } from 'vitest/config';
 
 const replaceEnvValue = (value: string | undefined) => {
@@ -26,7 +27,7 @@ export default defineConfig((config) => {
     const env = loadEnv(config.mode, process.cwd());
 
     return {
-        plugins: [react()],
+        plugins: [react(), viteTsconfigPaths()],
         test: {
             globals: true,
             environment: 'jsdom',
