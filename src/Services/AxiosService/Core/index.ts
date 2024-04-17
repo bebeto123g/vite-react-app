@@ -2,8 +2,11 @@ import { IErrorsResult } from 'Core/Models';
 import { IRequestProperty, IRequestPropertyWithData } from 'Services/AxiosService';
 import { axiosRequestFabric, transformRequestPropertyForRestActive } from './axiosRequestFabric';
 
-const { POST, GET, DELETE, PUT, PATCH } = axiosRequestFabric<IErrorsResult>();
+const { POST, GET, DELETE, PATCH, PUT } = axiosRequestFabric<IErrorsResult>();
 
+/**
+ * Основной сервис для формировния REST запросов, обертка над Axios с функционалом обработки ошибок
+ */
 export class AxiosService {
     static POST<TResponse, TData = unknown>(
         requestProperty: IRequestPropertyWithData<TResponse, TData, IErrorsResult>
