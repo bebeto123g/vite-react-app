@@ -16,6 +16,7 @@ const deleteBlobURL = (downloadURL: string) => {
         window.URL.revokeObjectURL(downloadURL);
     }, 0);
 };
+
 /**
  * Скачать файл методом POST или запросить мок файл
  *
