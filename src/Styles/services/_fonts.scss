@@ -1,0 +1,36 @@
+$fonts: (
+        default: (
+                'Raleway',
+                -system-ui,
+                -apple-system-ui,
+                BlinkMacSystemFont,
+                Roboto,
+                Oxygen,
+                Ubuntu,
+                Cantarell,
+                Arial,
+                Helvetica,
+                Geneva,
+                sans-serif,
+        ),
+        inter: (
+                'Inter',
+                -system-ui,
+                -apple-system-ui,
+                sans-serif,
+        ),
+);
+
+@mixin font($size: 16px, $weight: 400, $line-height: 24px, $font-family: default) {
+    font-family: map_get($fonts, $font-family);
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+}
+
+@mixin font--default($weight: 400) {
+    font-family: map_get($fonts, default);
+    font-size: 16px;
+    font-weight: $weight;
+    line-height: 24px;
+}

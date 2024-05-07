@@ -1,0 +1,11 @@
+@mixin minWidthMobile {
+    @media screen and (min-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin minWidthTablet {
+    @media screen and (min-width: $tablet) {
+        @content;
+    }
+}

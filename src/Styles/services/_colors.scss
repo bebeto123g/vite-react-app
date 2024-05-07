@@ -1,0 +1,33 @@
+$colors: (
+        global: (
+
+        ),
+        block: (
+
+        ),
+        text: (
+
+        ),
+        button: (
+
+        ),
+        border: (
+
+        ),
+        header: (
+
+        ),
+        footer: (
+
+        ),
+);
+
+@function color($keys...) {
+    $value: $colors;
+
+    @each $keyName in $keys {
+        $value: map-get($value, $keyName);
+    }
+
+    @return $value;
+}

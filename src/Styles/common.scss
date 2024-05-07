@@ -1,0 +1,32 @@
+@import 'services/common';
+@import 'services/normalize';
+@import 'bootstrap.min.css';
+@import 'App';
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: map_get($fonts, default);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.overflow-body {
+        overflow: hidden;
+        padding-right: 16px;
+    }
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+html {
+    color: #383636;
+}
+
+.modal-dialog {
+    min-width: 440px;
+}
