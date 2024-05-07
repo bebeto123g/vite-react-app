@@ -76,10 +76,7 @@ const axiosRequestMethodSplit = <TResponse, TData = unknown>(
             return axios.get(url, configuration);
 
         case ERestMethod.DELETE:
-            return axios.delete(url, {
-                data,
-                ...configuration,
-            });
+            return axios.delete(url, { data, ...configuration });
 
         case ERestMethod.PATCH:
             return axios.patch(url, data, configuration);

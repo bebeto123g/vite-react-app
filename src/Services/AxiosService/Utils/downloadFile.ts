@@ -8,7 +8,7 @@ import {
 } from 'Services/AxiosService';
 
 /** REGEX для парсинга имени файла из заголовка */
-const FILENAME_REGEX = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+const FILENAME_REGEXP = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
 
 /** Метод безопасного вызова revokeObjectURL */
 const deleteBlobURL = (downloadURL: string) => {
@@ -21,7 +21,7 @@ const deleteBlobURL = (downloadURL: string) => {
  * Скачать файл методом POST или запросить мок файл
  *
  * @param property Параметры формируемого запроса
- * @param [trustedContentType] Доверенные contentType
+ * @param trustedContentTypes Доверенные contentType
  */
 export const downloadFile = async <TData = unknown>(
     property: IRequestProperty<BlobPart> | IRequestPropertyWithData<BlobPart, TData>,
@@ -57,7 +57,7 @@ export const downloadFile = async <TData = unknown>(
     let filename = 'attachment';
 
     if (disposition?.includes('attachment')) {
-        const matches = FILENAME_REGEX.exec(disposition);
+        const matches = FILENAME_REGEXP.exec(disposition);
 
         if (matches?.[1]) {
             filename = matches[1].replace(/['"]/g, '');

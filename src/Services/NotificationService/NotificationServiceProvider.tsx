@@ -1,9 +1,9 @@
-import { FunctionComponent, PropsWithChildren, useCallback, useState } from 'react';
+import { FC, PropsWithChildren, useCallback, useState } from 'react';
 import { Alert, Snackbar } from '@mui/material';
 import { INotificationState } from './interfaces';
 import { NotificationServiceContext } from './NotificationServiceContext';
 
-export const NotificationServiceProvider: FunctionComponent<PropsWithChildren> = (props) => {
+export const NotificationServiceProvider: FC<PropsWithChildren> = (props) => {
     const { children } = props;
     const [state, setState] = useState<INotificationState>({ isOpen: false, content: '' });
 
