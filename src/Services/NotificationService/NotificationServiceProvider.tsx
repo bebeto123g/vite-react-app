@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useCallback, useState } from 'react';
 import { Alert, Snackbar } from '@mui/material';
 import { INotificationState } from './interfaces';
-import { NotificationServiceContext } from './NotificationServiceContext';
+import { NotificationServiceContext, NotificationServiceValueContext } from './NotificationServiceContext';
 
 export const NotificationServiceProvider: FC<PropsWithChildren> = (props) => {
     const { children } = props;
@@ -19,23 +19,25 @@ export const NotificationServiceProvider: FC<PropsWithChildren> = (props) => {
     };
 
     return (
-        <NotificationServiceContext.Provider value={createNotification}>
-            <Snackbar
-                open={state.isOpen}
-                autoHideDuration={5000}
-                // onClose={handleClose}
-                anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            >
-                <Alert
-                    onClose={closeNotification}
-                    severity={state.severity || 'info'}
-                    variant={state.variant || 'filled'}
-                    sx={{ width: '100%', ...(state.sx || {}) }}
+        <NotificationServiceValueContext.Provider value={state}>
+            <NotificationServiceContext.Provider value={createNotification}>
+                <Snackbar
+                    open={state.isOpen}
+                    autoHideDuration={5000}
+                    // onClose={handleClose}
+                    anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
                 >
-                    {state.content || ''}
-                </Alert>
-            </Snackbar>
-            {children}
-        </NotificationServiceContext.Provider>
+                    <Alert
+                        onClose={closeNotification}
+                        severity={state.severity || 'info'}
+                        variant={state.variant || 'filled'}
+                        sx={{ width: '100%', ...(state.sx || {}) }}
+                    >
+                        {state.content || ''}
+                    </Alert>
+                </Snackbar>
+                {children}
+            </NotificationServiceContext.Provider>
+        </NotificationServiceValueContext.Provider>
     );
 };

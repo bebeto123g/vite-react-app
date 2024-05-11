@@ -5,4 +5,10 @@ export const NotificationServiceContext = createContext<
     (notification: Omit<INotificationState, 'isOpen'>) => void
 >(() => {});
 
-export const useNotification = () => useContext(NotificationServiceContext);
+export const NotificationServiceValueContext = createContext<INotificationState>({
+    isOpen: false,
+    content: '',
+});
+
+export const useNotificationService = () => useContext(NotificationServiceContext);
+export const useNotificationValue = () => useContext(NotificationServiceValueContext);
