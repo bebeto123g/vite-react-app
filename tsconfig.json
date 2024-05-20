@@ -7,7 +7,7 @@
         "skipLibCheck": true,
 
         /* Bundler mode */
-        // "moduleResolution": "bundler",
+        "moduleResolution": "bundler",
         "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
@@ -22,7 +22,7 @@
 
         /* Tests */
         "types": ["vitest/globals"],
-        "moduleResolution": "Node",
+        // "moduleResolution": "Classic",
         "allowJs": false,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": false,
