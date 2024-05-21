@@ -1,16 +1,15 @@
-import { FC, ReactNode, useEffect, useRef } from 'react';
+import { FC, PropsWithChildren, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { ANIMATION_POPUP_TIME, useMount } from 'Core/Hooks/useMount';
 import Portal from '../../Portal/Portal';
 import styles from './Overlay.module.scss';
 
 interface IOverlayProps {
-    children: ReactNode;
     onClose: () => void;
     isOpened: boolean;
 }
 
-const Overlay: FC<IOverlayProps> = (props) => {
+const Overlay: FC<PropsWithChildren<IOverlayProps>> = (props) => {
     const { children, isOpened, onClose } = props;
     const { isMounted, isAnimationIn } = useMount(isOpened);
 
@@ -28,7 +27,6 @@ const Overlay: FC<IOverlayProps> = (props) => {
 
     if (!isMounted) return null;
 
-    // @ts-ignore
     return (
         <Portal>
             <div className={styles.container}>
