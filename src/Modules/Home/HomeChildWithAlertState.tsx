@@ -20,7 +20,9 @@ const HomeChildWithAlertState = () => {
     };
 
     const handlePrevArrowPopup = () => {
-        console.log('click handlePrevArrowPopup');
+        setTimeout(() => {
+            setIsOpenedDialog(false);
+        }, 1000);
     };
 
     const handleOpenDialog = () => {
@@ -32,7 +34,6 @@ const HomeChildWithAlertState = () => {
     };
 
     const handleSuccessDialog = () => {
-        console.log('click handleSuccessDialog');
         setTimeout(() => {
             setIsOpenedDialog(false);
         }, 1000);

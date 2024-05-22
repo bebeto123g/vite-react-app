@@ -1,14 +1,17 @@
-import { ENV_CONSTS } from 'Core/Constants';
+import { Provider } from 'react-redux';
 import { HomePage } from 'Modules/Home';
 import { NotificationServiceProvider } from 'Services/NotificationService';
-import './Styles/common.scss';
+import { setupStore } from 'Store';
+import 'Styles/common.scss';
+
+const store = setupStore();
 
 export const App = () => {
-    console.log(ENV_CONSTS);
-
     return (
-        <NotificationServiceProvider>
-            <HomePage />
-        </NotificationServiceProvider>
+        <Provider store={store}>
+            <NotificationServiceProvider>
+                <HomePage />
+            </NotificationServiceProvider>
+        </Provider>
     );
 };

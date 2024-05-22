@@ -10,8 +10,6 @@ export const HomePage = () => {
     const [counter, setCounter] = useState(0);
     const createNotification = useNotificationService();
 
-    console.log('HomePage render');
-
     const Notification = (
         <div>
             <ReactLogo width="22" height="22" fill="white" /> Текст из контекста
