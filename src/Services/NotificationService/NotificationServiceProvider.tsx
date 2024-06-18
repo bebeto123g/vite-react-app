@@ -1,11 +1,15 @@
 import { FC, PropsWithChildren, useCallback, useState } from 'react';
 import { Alert, Snackbar } from '@mui/material';
 import { INotificationState } from './interfaces';
-import { NotificationServiceContext, NotificationServiceValueContext } from './NotificationServiceContext';
+import {
+    DEFAULT_NOTIFICATION_STATE,
+    NotificationServiceContext,
+    NotificationServiceValueContext,
+} from './NotificationServiceContext';
 
 export const NotificationServiceProvider: FC<PropsWithChildren> = (props) => {
     const { children } = props;
-    const [state, setState] = useState<INotificationState>({ isOpen: false, content: '' });
+    const [state, setState] = useState<INotificationState>(DEFAULT_NOTIFICATION_STATE);
 
     const createNotification = useCallback((notification: Omit<INotificationState, 'isOpen'>) => {
         setState({ ...notification, isOpen: true });
