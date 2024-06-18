@@ -30,6 +30,7 @@ const createAsyncDataHelper =
         data: prepareCallback ? prepareCallback(prevState, action) : prevState.data,
         errors,
     });
+
 /**
  * Хелпер для вызова кастомных редюсеров в createAsyncReducer и createMultiAsyncReducer
  *
@@ -97,7 +98,7 @@ const chainPrepareReducerHelper = <TStateData, TServiceData = TStateData, TPaylo
 /**
  * Хелпер ищет и отрезает асинхронные преффиксы у типа экшена
  */
-const cutAsyncPreffix = (actionType: string): string => {
+const cutAsyncPrefix = (actionType: string): string => {
     const suffixes = Object.values(EProcessActionTypeSuffixes);
 
     for (let i = 0; i < suffixes.length; i++) {
@@ -125,7 +126,7 @@ const multiChainPrepareReducerHelper = <TStateData, TServiceData = TStateData, T
     action: TAsyncAction<TServiceData | IErrorsResult, TPayload>,
     prepare: IReducerGroupPrepare<TStateData, TServiceData, TPayload> = {}
 ): IAsyncData<TStateData> | void => {
-    const actionTypeWithOutPrefix = cutAsyncPreffix(action.type);
+    const actionTypeWithOutPrefix = cutAsyncPrefix(action.type);
 
     if (actionTypes.includes(actionTypeWithOutPrefix)) {
         return chainPrepareReducerHelper<TStateData, TServiceData, TPayload>(

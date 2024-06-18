@@ -1,8 +1,8 @@
-import HomeChildWithAlertState from 'Modules/Home/HomeChildWithAlertState.tsx';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 import ReactLogo from 'Assets/react.svg?react';
 import reactLogo from 'Assets/react.svg';
+import HomeChildWithAlertState from 'Modules/Home/HomeChildWithAlertState';
 import { useNotificationService } from 'Services/NotificationService';
 import viteLogo from '/vite.svg';
 

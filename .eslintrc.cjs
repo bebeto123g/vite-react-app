@@ -161,6 +161,11 @@ module.exports = defineConfig({
                         position: 'before',
                     },
                     {
+                        pattern: 'react-transition-group',
+                        group: 'external',
+                        position: 'before',
+                    },
+                    {
                         pattern: '@mui',
                         group: 'external',
                         position: 'before',
